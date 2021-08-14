@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance2", "Inheritance
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces3", "Interfaces3\Interfaces3.csproj", "{387687E4-958C-4192-BED6-AC26DA16E909}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractClasses", "AbstractClasses\AbstractClasses.csproj", "{7AAD6452-DB78-4F70-B42C-D55D0876D064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceAbstract", "InterfaceAbstract\InterfaceAbstract.csproj", "{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{387687E4-958C-4192-BED6-AC26DA16E909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{387687E4-958C-4192-BED6-AC26DA16E909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{387687E4-958C-4192-BED6-AC26DA16E909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAD6452-DB78-4F70-B42C-D55D0876D064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAD6452-DB78-4F70-B42C-D55D0876D064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAD6452-DB78-4F70-B42C-D55D0876D064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAD6452-DB78-4F70-B42C-D55D0876D064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
