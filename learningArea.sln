@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractClasses", "Abstract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceAbstract", "InterfaceAbstract\InterfaceAbstract.csproj", "{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameProject", "GameProject\GameProject.csproj", "{EA4C73D4-7DA8-45A0-BD8E-64F0D45A45FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqProject", "LinqProject\LinqProject.csproj", "{5F1ACA0C-1C86-408B-9716-2CADA238F9E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EADBB711-6F5B-4F50-9A30-BF0BD24CAE32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4C73D4-7DA8-45A0-BD8E-64F0D45A45FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4C73D4-7DA8-45A0-BD8E-64F0D45A45FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4C73D4-7DA8-45A0-BD8E-64F0D45A45FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4C73D4-7DA8-45A0-BD8E-64F0D45A45FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1ACA0C-1C86-408B-9716-2CADA238F9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1ACA0C-1C86-408B-9716-2CADA238F9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1ACA0C-1C86-408B-9716-2CADA238F9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1ACA0C-1C86-408B-9716-2CADA238F9E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
