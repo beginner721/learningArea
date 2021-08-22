@@ -21,12 +21,73 @@ namespace LinqProject
                 new Product{ProductId=3,CategoryId=1,ProductName="Hp Laptop",QuantityPerUnit="8GB Ram",UnitPrice=6000,UnitsInStock=2 },
                 new Product{ProductId=4,CategoryId=2,ProductName="Samsung Telefon",QuantityPerUnit="4GB Ram",UnitPrice=5000,UnitsInStock=15 },
                 new Product{ProductId=5,CategoryId=2,ProductName="Apple Telefon",QuantityPerUnit="4GB Ram",UnitPrice=8000,UnitsInStock=0 }
-                
+
             };
+            //Test(products);
+
+            //GetProducts(products);
+
+            //AnyTest(products);
+
+            //FindTest(products);
+            //FindAllTest(products);
+
+            //AscDescTest(products);
+
+
+            //farklı bir yazım stili ile 
+            var result = from p in products
+                         where p.UnitPrice>1000 && p.UnitsInStock>0
+                         orderby p.UnitPrice descending, p.ProductName ascending
+                         select p;
+            foreach (var product in result)
+            {
+                Console.WriteLine(product.ProductName);
+            }
+
+        }
+
+        private static void AscDescTest(List<Product> products)
+        {
+            //Single Line Query- yani tek satır sorgu tipi
+            var result = products.Where(p => p.ProductName.Contains("top")).OrderBy(p => p.UnitPrice).ThenByDescending(p => p.ProductName);
+            //orderby veya OrderByDescending ile istediğimiz sıralamayı yapabiliriz.
+            foreach (var product in result)                                             //thenby ise diğer bir sıralama istiyorsak, önce fiyat sonra fiyatları kendi arasında alfabetik örneğin...
+            {
+                Console.WriteLine(product.ProductName);
+            }
+        }
+
+        private static void FindAllTest(List<Product> products)
+        {
+            //belirlenen şarta uyan bütün elementleri getirir, where gibi çalışır
+            var result = products.FindAll(p => p.ProductName.Contains("top")); //contains içeriyorsa demektir. birkaç harf kelime de aratılabilir nokta atışı olmasına gerek yok
+            Console.WriteLine(result);
+            //where bize IEnumerable bir liste döner her yola çekilebilir, ancak burda sadece liste döner
+        }
+
+        private static void FindTest(List<Product> products)
+        {
+            //aranan kritere uyan nesnenin kendisini getirir.
+            //ürün detayına gitmek için kullanılabilir
+            //3 banka kredisi var ise bir banka kredisinin detayını görmek için kullanılabilir örneğin...
+            var result = products.Find(p => p.ProductId == 3);
+            Console.WriteLine(result.ProductName);
+        }
+
+        private static void AnyTest(List<Product> products)
+        {
+            //any ile liste içinde o eleman var mı yok mu arayabiliriz, bool döner: true veya false.
+            var result = products.Any(p => p.ProductName == "False Laptop");
+            Console.WriteLine(result);
+        }
+
+        private static void Test(List<Product> products)
+        {
             Console.WriteLine("-- -- -- ALGORITMIK - - - - -");
             foreach (var product in products)
             {
-                if (product.UnitPrice>5000 && product.UnitsInStock>3)
+                if (product.UnitPrice > 5000 && product.UnitsInStock > 3)
                 {
                     Console.WriteLine(product.ProductName);
                 }
@@ -38,9 +99,8 @@ namespace LinqProject
             {
                 Console.WriteLine(product.ProductName);
             }
-
-            GetProducts(products);
         }
+
         //iki farklı metod yazalım aynı işi yapan
         static List<Product> GetProducts(List<Product> products)
         {
