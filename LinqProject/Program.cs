@@ -24,27 +24,40 @@ namespace LinqProject
 
             };
             //Test(products);
-
             //GetProducts(products);
-
             //AnyTest(products);
-
             //FindTest(products);
             //FindAllTest(products);
-
             //AscDescTest(products);
+            //ClassicLinqTest(products);
 
-
-            //farklı bir yazım stili ile 
             var result = from p in products
-                         where p.UnitPrice>1000 && p.UnitsInStock>0
+                         join c in categories //her bir p ile her bir c join edilir, yan yana getirilir, AMA NEYE GÖRE YAN YANA GETİRİLİR ?
+      on p.CategoryId equals c.CategoryId  //BUNA GÖRE YAN YANA GETİRİLİR
+                         where p.UnitPrice > 5000 //aranan veri
+                         orderby p.UnitPrice descending //sıralama
+                         select new ProductDto { ProductId = p.ProductId, CategoryName = c.CategoryName, ProductName = p.ProductName, UnitPrice = p.UnitPrice };
+
+            foreach (var productDto in result)
+            {
+                Console.WriteLine("Ürün adı: {0} \n Kategori: {1}",productDto.ProductName,productDto.CategoryName); //farklı bir kullanım
+            }
+
+
+        }
+
+        private static void ClassicLinqTest(List<Product> products)
+        {
+            //farklı bir yazım stili ile linq
+            var result = from p in products
+                         where p.UnitPrice > 1000 && p.UnitsInStock > 0
                          orderby p.UnitPrice descending, p.ProductName ascending
-                         select p;
+                         select new ProductDto { ProductName = p.ProductName, ProductId = p.ProductId, UnitPrice = p.UnitPrice };
+
             foreach (var product in result)
             {
                 Console.WriteLine(product.ProductName);
             }
-
         }
 
         private static void AscDescTest(List<Product> products)
@@ -119,6 +132,14 @@ namespace LinqProject
         static List<Product> GetProductsLinq(List<Product> products)
         {
             return products.Where(p=> p.UnitPrice>5000 && p.UnitsInStock>3).ToList();
+        }
+
+        class ProductDto
+        {
+            public int ProductId { get; set; }
+            public string CategoryName { get; set; } //category name başka class'ta join ile çalışmamız gerek
+            public string ProductName { get; set; }
+            public decimal UnitPrice { get; set; }
         }
 
 
